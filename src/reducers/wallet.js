@@ -1,3 +1,5 @@
+import { GET_CURRENCIES, REQUEST_API, HANDLE_API_ERROR } from '../actions';
+
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
 const INITIAL_STATE = {
   currencies: [],
@@ -6,6 +8,15 @@ const INITIAL_STATE = {
 
 const wallet = (state = INITIAL_STATE, action) => {
   switch (action.type) {
+  case REQUEST_API:
+    return { ...state };
+  case GET_CURRENCIES:
+    return {
+      ...state,
+      currencies: Object.keys(action.payload).filter((currency) => currency !== 'USDT'),
+    };
+  case HANDLE_API_ERROR:
+    return { ...state };
   default:
     return state;
   }
