@@ -1,0 +1,19 @@
+.header-content {
+  align-items: center;
+  background-color: rgb(252, 252, 252);
+  box-shadow: 0 1px 20px rgb(236, 235, 235);
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.header-main-title {
+  font-weight: 600;
+}
+
+.header-right {
+  align-items: center;
+  display: flex;
+  width: 50%;
+  justify-content: space-around;
+}
