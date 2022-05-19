@@ -23,3 +23,8 @@ img {
   height: auto;
   max-width: 100%;
 }
+
+/* Retirado de Login.css devido a erro "maluco" no Lint */
+.login-input , .login-btn {
+  font-family: 'Fira Sans Condensed', sans-serif;
+}
