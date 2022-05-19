@@ -12,7 +12,7 @@
   margin: 15px;
 }
 
-.login-input, .login-btn {
+.login-input , .login-btn {
   box-shadow: 1px 1px 5px rgb(225, 225, 225);
   font-family: 'Fira Sans Condensed', sans-serif;
   margin: 8px 0;
@@ -26,11 +26,6 @@
   padding: 10px;
 }
 
-.login-btn:disabled {
-  background-color: rgba(0, 170, 0, 0.3);
-  cursor: not-allowed;
-}
-
 .login-btn {
   background-color: rgb(0, 180, 0);
   border: none;
@@ -42,10 +37,13 @@
   transition: 0.2s;
 }
 
+.login-btn:disabled {
+  background-color: rgba(0, 170, 0, 0.3);
+  cursor: not-allowed;
+}
+
 .login-btn:hover:enabled {
   background-color: rgb(0, 160, 0);
   box-shadow: 2px 3px 10px rgb(225, 225, 225);
   transition: 0.2s;
 }
-
-
