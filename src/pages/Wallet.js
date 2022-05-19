@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import { fetchCurrencies, setExpenses } from '../actions';
+import './WalletForm.css';
 
 class Wallet extends React.Component {
   constructor(props) {
@@ -50,10 +51,11 @@ class Wallet extends React.Component {
     return (
       <>
         <Header />
-        <form>
+        <form className="form-content">
           <label htmlFor="value">
             Valor:
             <input
+              className="form-input value"
               id="value"
               data-testid="value-input"
               name="value"
@@ -64,6 +66,7 @@ class Wallet extends React.Component {
           <label htmlFor="currencies">
             Moeda:
             <select
+              className="form-input"
               id="currencies"
               name="currency"
               value={ currency }
@@ -75,6 +78,7 @@ class Wallet extends React.Component {
           <label htmlFor="payment-method">
             Método de pagamento:
             <select
+              className="form-input"
               id="payment-method"
               data-testid="method-input"
               name="method"
@@ -90,6 +94,7 @@ class Wallet extends React.Component {
           <label htmlFor="categories">
             Categoria:
             <select
+              className="form-input"
               id="categories"
               data-testid="tag-input"
               name="tag"
@@ -107,6 +112,7 @@ class Wallet extends React.Component {
           <label htmlFor="description">
             Descrição:
             <input
+              className="form-input description"
               id="description"
               data-testid="description-input"
               name="description"
@@ -115,6 +121,7 @@ class Wallet extends React.Component {
             />
           </label>
           <button
+            className="add-expense-btn"
             type="submit"
             onClick={ this.handleSubmit }
           >

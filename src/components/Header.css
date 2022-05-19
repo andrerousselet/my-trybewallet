@@ -1,7 +1,7 @@
 .header-content {
   align-items: center;
   background-color: rgb(252, 252, 252);
-  box-shadow: 0 1px 20px rgb(236, 235, 235);
+  box-shadow: 0 3px 5px rgb(200, 200, 200);
   display: flex;
   justify-content: space-between;
   padding: 15px;
