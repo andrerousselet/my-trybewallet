@@ -14,7 +14,7 @@
 
 .login-input , .login-btn {
   box-shadow: 1px 1px 5px rgb(225, 225, 225);
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: Fira Sans Condensed, sans-serif;
   margin: 8px 0;
   width: 280px;
 }
