@@ -37,7 +37,8 @@ class Login extends React.Component {
     const errorCases = [
       !email.length,
       // fonte do Regex -> https://pt.stackoverflow.com/questions/1386/express%C3%A3o-regular-para-valida%C3%A7%C3%A3o-de-e-mail
-      !email.match(/^[a-z0-9.]+@[a-z0-9]+\.[a-z]/i),
+      // testes pessoais para o Regex -> https://regex101.com/
+      !email.match(/^[a-z0-9.]+@[a-z0-9]+\.[a-z]{3}$/i),
       !password.length,
       password.length < PASSWORD_MIN_LENGTH,
     ];
