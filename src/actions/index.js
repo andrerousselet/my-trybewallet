@@ -3,13 +3,16 @@ export const SET_USER_EMAIL = 'SET_USER_EMAIL';
 export const REQUEST_API = 'REQUEST_API';
 export const GET_CURRENCIES = 'GET_CURRENCIES';
 export const HANDLE_API_ERROR = 'HANDLE_API_ERROR';
+export const ADD_EXPENSE = 'ADD_EXPENSE';
 
 // Coloque aqui suas actions
+// Action do Login
 export const userEmail = (email) => ({
   type: SET_USER_EMAIL,
   payload: email,
 });
 
+// Actions da API
 export const requestCurrenciesApi = () => ({
   type: REQUEST_API,
 });
@@ -24,7 +27,13 @@ export const handleCurrenciesApiError = (error) => ({
   payload: error,
 });
 
-// thunk function
+// Action das despesas
+export const addExpense = (expenses) => ({
+  type: ADD_EXPENSE,
+  payload: expenses,
+});
+
+// thunk function: carregamento da página (Wallet) -> componentDidMount
 export function fetchCurrencies() {
   return async (dispatch) => {
     dispatch(requestCurrenciesApi());
@@ -32,6 +41,20 @@ export function fetchCurrencies() {
       const response = await fetch('https://economia.awesomeapi.com.br/json/all');
       const data = await response.json();
       dispatch(getCurrencies(data));
+    } catch (error) {
+      dispatch(handleCurrenciesApiError(error));
+    }
+  };
+}
+
+// thunk function 2: adicionando despesas
+export function setExpenses(state) {
+  return async (dispatch) => {
+    dispatch(requestCurrenciesApi());
+    try {
+      const response = await fetch('https://economia.awesomeapi.com.br/json/all');
+      const exchangeRates = await response.json();
+      dispatch(addExpense({ ...state, exchangeRates }));
     } catch (error) {
       dispatch(handleCurrenciesApiError(error));
     }

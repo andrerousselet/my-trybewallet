@@ -1,4 +1,4 @@
-import { GET_CURRENCIES, REQUEST_API, HANDLE_API_ERROR } from '../actions';
+import { GET_CURRENCIES, REQUEST_API, HANDLE_API_ERROR, ADD_EXPENSE } from '../actions';
 
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
 const INITIAL_STATE = {
@@ -17,6 +17,11 @@ const wallet = (state = INITIAL_STATE, action) => {
     };
   case HANDLE_API_ERROR:
     return { ...state };
+  case ADD_EXPENSE:
+    return {
+      ...state,
+      expenses: [...state.expenses, action.payload],
+    };
   default:
     return state;
   }
