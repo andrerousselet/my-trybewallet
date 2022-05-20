@@ -15,3 +15,29 @@ th , td {
   width: 10.5%;
   word-wrap: break-word;
 }
+
+.btn-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.edit-btn , .delete-btn {
+  border: none;
+  border-radius: 7px;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  padding:  3px 5px;
+  transition: 0.2s;
+}
+
+.edit-btn {
+  background-color: rgb(100, 160, 200);
+}
+
+.delete-btn {
+  background-color: rgb(220, 90, 110);
+}
+
+

@@ -25,6 +25,6 @@ img {
 }
 
 /* Retirado de Login.css devido a erro "maluco" no Lint */
-.login-input , .login-btn , .add-expense-btn , .form-input {
+.login-input , .login-btn , .add-expense-btn , .form-input , .edit-btn , .delete-btn {
   font-family: 'Fira Sans Condensed', sans-serif;
 }
