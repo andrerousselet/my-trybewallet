@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import { fetchCurrencies, setExpenses } from '../actions';
 import './WalletForm.css';
-import ExpensesTable from '../components/Table';
+import ExpensesTable from '../components/ExpensesTable';
 
 class Wallet extends React.Component {
   constructor(props) {

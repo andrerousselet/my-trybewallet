@@ -1,0 +1,17 @@
+.table-head , .table-rows {
+  align-items: center;
+  display: flex;
+  height: 50px;
+  justify-content: space-around;
+  text-align: center;
+  width: 100vw;
+}
+
+.table-head {
+  background-color: lightgrey;
+}
+
+th, td {
+  width: 10.5%;
+  word-wrap: break-word;
+}
