@@ -8,7 +8,7 @@ class Header extends React.Component {
     const { userEmail, expenses } = this.props;
     const total = expenses
       .reduce((acc, curr) => acc
-        + (curr.value * curr.exchangeRates[`${curr.currency}`].ask), 0);
+        + (curr.value * curr.exchangeRates[curr.currency].ask), 0);
     return (
       <header className="header-content">
         <h1 className="header-main-title">TrybeWallet</h1>
