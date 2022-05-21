@@ -5,6 +5,7 @@ export const GET_CURRENCIES = 'GET_CURRENCIES';
 export const HANDLE_API_ERROR = 'HANDLE_API_ERROR';
 export const ADD_EXPENSE = 'ADD_EXPENSE';
 export const DELETE_EXPENSE = 'DELETE_EXPENSE';
+export const EDIT_EXPENSE = 'EDIT_EXPENSE';
 
 // Coloque aqui suas actions
 // Action do Login
@@ -36,6 +37,11 @@ export const addExpense = (expenses) => ({
 
 export const deleteExpense = (id) => ({
   type: DELETE_EXPENSE,
+  payload: id,
+});
+
+export const editExpense = (id) => ({
+  type: EDIT_EXPENSE,
   payload: id,
 });
 
