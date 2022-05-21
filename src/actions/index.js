@@ -6,6 +6,7 @@ export const HANDLE_API_ERROR = 'HANDLE_API_ERROR';
 export const ADD_EXPENSE = 'ADD_EXPENSE';
 export const DELETE_EXPENSE = 'DELETE_EXPENSE';
 export const EDIT_EXPENSE = 'EDIT_EXPENSE';
+export const SUBMIT_MODIFIED_EXPENSE = 'SUBMIT_MODIFIED_EXPENSE';
 
 // Coloque aqui suas actions
 // Action do Login
@@ -30,9 +31,9 @@ export const handleCurrenciesApiError = (error) => ({
 });
 
 // Action das despesas
-export const addExpense = (expenses) => ({
+export const addExpense = (expense) => ({
   type: ADD_EXPENSE,
-  payload: expenses,
+  payload: expense,
 });
 
 export const deleteExpense = (id) => ({
@@ -43,6 +44,11 @@ export const deleteExpense = (id) => ({
 export const editExpense = (id) => ({
   type: EDIT_EXPENSE,
   payload: id,
+});
+
+export const submitModifiedExpense = (expense) => ({
+  type: SUBMIT_MODIFIED_EXPENSE,
+  payload: expense,
 });
 
 // thunk function: carregamento da página (Wallet) -> componentDidMount
