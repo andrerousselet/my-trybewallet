@@ -68,7 +68,7 @@ class WalletForm extends React.Component {
   render() {
     const { value, currency, method,
       tag, description } = this.state;
-    const { currencies, onEdit } = this.props;
+    const { currencies, onEdit, expenseOnEdit } = this.props;
     return (
       <form className="form-content">
         <label htmlFor="value">
@@ -80,6 +80,7 @@ class WalletForm extends React.Component {
             name="value"
             value={ value }
             onChange={ this.handleChange }
+            placeholder={ expenseOnEdit && expenseOnEdit.value }
           />
         </label>
         <label htmlFor="currencies">
@@ -138,6 +139,7 @@ class WalletForm extends React.Component {
             name="description"
             value={ description }
             onChange={ this.handleChange }
+            placeholder={ expenseOnEdit && expenseOnEdit.description }
           />
         </label>
         <button

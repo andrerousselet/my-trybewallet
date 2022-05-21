@@ -11,11 +11,41 @@ class ExpensesTable extends Component {
       <table>
         <thead>
           <tr className="table-head">
-            <th>Descrição</th>
-            <th>Tag</th>
-            <th>Método de pagamento</th>
-            <th>Valor</th>
-            <th>Moeda</th>
+            <th>
+              Descrição
+              {/* {' '}
+              <span role="img" aria-label="clipboard">
+                📋
+              </span> */}
+            </th>
+            <th>
+              Tag
+              {/* {' '}
+              <span role="img" aria-label="clipboard">
+                🔖
+              </span> */}
+            </th>
+            <th>
+              Método de pagamento
+              {/* {' '}
+              <span role="img" aria-label="clipboard">
+                💰
+              </span> */}
+            </th>
+            <th>
+              Valor
+              {/* {' '}
+              <span role="img" aria-label="clipboard">
+                💲
+              </span> */}
+            </th>
+            <th>
+              Moeda
+              {/* {' '}
+              <span role="img" aria-label="clipboard">
+                🪙
+              </span> */}
+            </th>
             <th>Câmbio utilizado</th>
             <th>Valor convertido</th>
             <th>Moeda de conversão</th>

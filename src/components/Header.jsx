@@ -30,6 +30,10 @@ class Header extends React.Component {
             data-testid="header-currency-field"
           >
             BRL
+            {' '}
+            <span role="img" aria-label="clipboard">
+              🇧🇷
+            </span>
           </div>
         </section>
       </header>
