@@ -41,8 +41,8 @@ const wallet = (state = INITIAL_STATE, action) => {
       ...state,
       onEdit: false,
       expenseOnEdit: {},
-      expenses: state.expenses.map((expense, index, array) => {
-        if (action.payload.id === array[index].id) {
+      expenses: state.expenses.map((expense) => {
+        if (expense.id === action.payload.id) {
           expense = action.payload;
         }
         return expense;
