@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { fetchCurrencies, setExpenses } from '../actions';
+import { fetchCurrencies, setExpenses, submitModifiedExpense } from '../actions';
 import './WalletForm.css';
 
 class WalletForm extends React.Component {
@@ -30,8 +30,14 @@ class WalletForm extends React.Component {
   }
 
   handleSubmit = (event) => {
-    const { dispatchExpenses } = this.props;
+    const { onEdit } = this.props;
     event.preventDefault();
+    if (onEdit) this.modifyExpense();
+    else this.addNewExpense();
+  }
+
+  addNewExpense = () => {
+    const { dispatchExpenses } = this.props;
     dispatchExpenses(this.state);
     this.setState((prev) => ({
       id: prev.id + 1,
@@ -43,10 +49,26 @@ class WalletForm extends React.Component {
     }));
   }
 
+  modifyExpense = () => {
+    const { expenseOnEdit, dispatchModifiedExpense } = this.props;
+    dispatchModifiedExpense({
+      ...this.state,
+      id: expenseOnEdit.id,
+      exchangeRates: expenseOnEdit.exchangeRates,
+    });
+    this.setState({
+      value: '',
+      currency: 'USD',
+      method: '',
+      tag: '',
+      description: '',
+    });
+  }
+
   render() {
     const { value, currency, method,
       tag, description } = this.state;
-    const { currencies } = this.props;
+    const { currencies, onEdit } = this.props;
     return (
       <form className="form-content">
         <label htmlFor="value">
@@ -65,6 +87,7 @@ class WalletForm extends React.Component {
           <select
             className="form-input"
             id="currencies"
+            data-testid="currency-input"
             name="currency"
             value={ currency }
             onChange={ this.handleChange }
@@ -122,7 +145,7 @@ class WalletForm extends React.Component {
           type="submit"
           onClick={ this.handleSubmit }
         >
-          ADICIONAR DESPESA
+          {onEdit ? 'EDITAR DESPESA' : 'ADICIONAR DESPESA'}
         </button>
       </form>
     );
@@ -131,17 +154,28 @@ class WalletForm extends React.Component {
 
 const mapStateToProps = (state) => ({
   currencies: state.wallet.currencies,
+  onEdit: state.wallet.onEdit,
+  expenseOnEdit: state.wallet.expenseOnEdit,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   fetchCurrenciesFromApi: () => dispatch(fetchCurrencies()),
   dispatchExpenses: (state) => dispatch(setExpenses(state)),
+  dispatchModifiedExpense: (state) => dispatch(submitModifiedExpense(state)),
 });
+
+WalletForm.defaultProps = {
+  onEdit: PropTypes.bool,
+  expenseOnEdit: PropTypes.objectOf(PropTypes.any),
+};
 
 WalletForm.propTypes = {
   currencies: PropTypes.arrayOf(PropTypes.string).isRequired,
   fetchCurrenciesFromApi: PropTypes.func.isRequired,
   dispatchExpenses: PropTypes.func.isRequired,
+  onEdit: PropTypes.bool,
+  expenseOnEdit: PropTypes.objectOf(PropTypes.any),
+  dispatchModifiedExpense: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(WalletForm);
