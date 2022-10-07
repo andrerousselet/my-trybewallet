@@ -3,6 +3,7 @@
 A simple expense control wallet with currency conversion.
 
 [Trybewallet](https://quiet-semifreddo-9e62cc.netlify.app/ "Trybewallet")
+(deployed using Netlify)
 
 ---
 
@@ -19,6 +20,3 @@ A simple expense control wallet with currency conversion.
 
 * React
 * Redux
-
-
-
