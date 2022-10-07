@@ -1,10 +1,23 @@
-# 🚧 README em construção 🚧
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-⚠️ IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+# My Trybewallet
+
+A simple expense control wallet with currency conversion.
+
+## Developed Skills
+
+- React Class Components
+- State Management using Redux
+  - Redux Thunk middleware for async logic
+  - Connect API (mapStateToProps and mapDispatchToProps)
+
+## Used techs
+
+- React
+- Redux
+
+## Run the app:
+
+1. Clone the repo
+
+2.     npm install && npm start
+    
+3. Open your browser > http://localhost:3000/
