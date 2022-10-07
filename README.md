@@ -2,22 +2,23 @@
 
 A simple expense control wallet with currency conversion.
 
-## Developed Skills
+[Trybewallet](https://quiet-semifreddo-9e62cc.netlify.app/ "Trybewallet")
 
-- React Class Components
-- State Management using Redux
-  - Redux Thunk middleware for async logic
-  - Connect API (mapStateToProps and mapDispatchToProps)
+---
 
-## Used techs
+### Developed Skills
 
-- React
-- Redux
+* React Class Components
+* State Management using Redux
+  * Redux Thunk middleware for async logic
+  * Connect API (mapStateToProps and mapDispatchToProps)
+  
+---
 
-## Run the app:
+### Used techs
 
-1. Clone the repo
+* React
+* Redux
 
-2.     npm install && npm start
-    
-3. Open your browser > http://localhost:3000/
+
+
